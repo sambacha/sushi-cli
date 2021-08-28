@@ -1,0 +1,5 @@
+site_name: sushi-sh
+theme: readthedocs
+repo_url: https://github.com/manifoldfinance/sushi-sh
+site_description: "Command Line Shell Environment for SushiSwap"
+site_author: "SushiSwap Contributors"
