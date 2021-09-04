@@ -1,3 +1,7 @@
+<p align="center">
+<img src="./docs/sushi_logo.svg">
+</p>
+
 sushi-sh
 ======
 
