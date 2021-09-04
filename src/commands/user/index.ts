@@ -1,5 +1,6 @@
 /**
- * @fileoverview User Information Command 
+ * @fileoverview User Information Command
+ * 
  */
 
 import * as Types from '../../types';
@@ -235,15 +236,9 @@ export default class user extends Command {
     })
   };
 
-  /**
-   * Description placeholder
-   * @date 9/3/2021 - 11:10:12 PM
-   *
-   * @async
-   * @returns {*}
-   */
+
   async run() {
-    const { flags } = this.parse(user);
+    const { flags } = await this.parse(user);
     await handler({ command: this, query: UserDocument, variables: flags });
   }
 }
