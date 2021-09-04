@@ -1,9 +1,18 @@
+/**
+ * @fileoverview User Information Command 
+ */
+
 import * as Types from '../../types';
 
 import { Command, flags } from '@oclif/command'
 import handler from '../../handler'
 import gql from 'graphql-tag';
 
+/**
+ * User Information Query
+ * @summary GrraphQL Query for User Information
+ * @interface {"\nquery user($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $orderDirection: OrderDirection, $where: PairDayData_filter, $skip1: Int, $first1: Int, $orderBy1: PairDayData_orderBy, $orderDirection1: OrderDirection, $where1: PairDayData_filter, $skip2: Int, $first2: Int, $orderBy2: LiquidityPosition_orderBy,...}
+ */
 const UserDocument = `
 query user($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $orderDirection: OrderDirection, $where: PairDayData_filter, $skip1: Int, $first1: Int, $orderBy1: PairDayData_orderBy, $orderDirection1: OrderDirection, $where1: PairDayData_filter, $skip2: Int, $first2: Int, $orderBy2: LiquidityPosition_orderBy, $orderDirection2: OrderDirection, $where2: LiquidityPosition_filter, $id: ID!, $block: Block_height) {
   user(id: $id, block: $block) {
@@ -135,9 +144,25 @@ query user($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $orderDirecti
   }
 }`
 
+/**
+ * Description placeholder
+ * @date 9/3/2021 - 11:10:12 PM
+ *
+ * @export
+ * @class user
+ * @typedef {user}
+ * @extends {Command}
+ */
 export default class user extends Command {
   
   
+  /**
+   * Description placeholder
+   * @date 9/3/2021 - 11:10:12 PM
+   *
+   * @static
+   * @type {{ help: any; skip: any; first: any; orderBy: any; orderDirection: any; where: any; skip1: any; first1: any; orderBy1: any; orderDirection1: any; where1: any; skip2: any; first2: any; orderBy2: any; orderDirection2: any; where2: any; id: any; block: any; }}
+   */
   static flags = {
     help: flags.help({ char: 'h' }),
     skip: flags.integer({
@@ -210,6 +235,13 @@ export default class user extends Command {
     })
   };
 
+  /**
+   * Description placeholder
+   * @date 9/3/2021 - 11:10:12 PM
+   *
+   * @async
+   * @returns {*}
+   */
   async run() {
     const { flags } = this.parse(user);
     await handler({ command: this, query: UserDocument, variables: flags });

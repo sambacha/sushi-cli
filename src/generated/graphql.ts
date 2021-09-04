@@ -1058,8 +1058,8 @@ export enum Pair_OrderBy {
 
 export type Query = {
   __typename?: 'Query';
-  uniswapFactory?: Maybe<UniswapFactory>;
-  uniswapFactories: Array<UniswapFactory>;
+  sushiswapFactory?: Maybe<SushiswapFactory>;
+  sushiswapFactories: Array<SushiswapFactory>;
   token?: Maybe<Token>;
   tokens: Array<Token>;
   pair?: Maybe<Pair>;
@@ -1080,8 +1080,8 @@ export type Query = {
   swaps: Array<Swap>;
   bundle?: Maybe<Bundle>;
   bundles: Array<Bundle>;
-  uniswapDayData?: Maybe<UniswapDayData>;
-  uniswapDayDatas: Array<UniswapDayData>;
+  sushiswapDayData?: Maybe<SushiswapDayData>;
+  sushiswapDayDatas: Array<SushiswapDayData>;
   pairHourData?: Maybe<PairHourData>;
   pairHourDatas: Array<PairHourData>;
   pairDayData?: Maybe<PairDayData>;
@@ -1093,18 +1093,18 @@ export type Query = {
 };
 
 
-export type QueryUniswapFactoryArgs = {
+export type QuerySushiswapFactoryArgs = {
   id: Scalars['ID'];
   block?: Maybe<Block_Height>;
 };
 
 
-export type QueryUniswapFactoriesArgs = {
+export type QuerySushiswapFactoriesArgs = {
   skip?: Maybe<Scalars['Int']>;
   first?: Maybe<Scalars['Int']>;
-  orderBy?: Maybe<UniswapFactory_OrderBy>;
+  orderBy?: Maybe<SushiswapFactory_OrderBy>;
   orderDirection?: Maybe<OrderDirection>;
-  where?: Maybe<UniswapFactory_Filter>;
+  where?: Maybe<SushiswapFactory_Filter>;
   block?: Maybe<Block_Height>;
 };
 
@@ -1269,18 +1269,18 @@ export type QueryBundlesArgs = {
 };
 
 
-export type QueryUniswapDayDataArgs = {
+export type QuerySushiswapDayDataArgs = {
   id: Scalars['ID'];
   block?: Maybe<Block_Height>;
 };
 
 
-export type QueryUniswapDayDatasArgs = {
+export type QuerySushiswapDayDatasArgs = {
   skip?: Maybe<Scalars['Int']>;
   first?: Maybe<Scalars['Int']>;
-  orderBy?: Maybe<UniswapDayData_OrderBy>;
+  orderBy?: Maybe<SushiswapDayData_OrderBy>;
   orderDirection?: Maybe<OrderDirection>;
-  where?: Maybe<UniswapDayData_Filter>;
+  where?: Maybe<SushiswapDayData_Filter>;
   block?: Maybe<Block_Height>;
 };
 
@@ -1339,8 +1339,8 @@ export type Query_MetaArgs = {
 
 export type Subscription = {
   __typename?: 'Subscription';
-  uniswapFactory?: Maybe<UniswapFactory>;
-  uniswapFactories: Array<UniswapFactory>;
+  sushiswapFactory?: Maybe<SushiswapFactory>;
+  sushiswapFactories: Array<SushiswapFactory>;
   token?: Maybe<Token>;
   tokens: Array<Token>;
   pair?: Maybe<Pair>;
@@ -1361,8 +1361,8 @@ export type Subscription = {
   swaps: Array<Swap>;
   bundle?: Maybe<Bundle>;
   bundles: Array<Bundle>;
-  uniswapDayData?: Maybe<UniswapDayData>;
-  uniswapDayDatas: Array<UniswapDayData>;
+  sushiswapDayData?: Maybe<SushiswapDayData>;
+  sushiswapDayDatas: Array<SushiswapDayData>;
   pairHourData?: Maybe<PairHourData>;
   pairHourDatas: Array<PairHourData>;
   pairDayData?: Maybe<PairDayData>;
@@ -1374,18 +1374,18 @@ export type Subscription = {
 };
 
 
-export type SubscriptionUniswapFactoryArgs = {
+export type SubscriptionSushiswapFactoryArgs = {
   id: Scalars['ID'];
   block?: Maybe<Block_Height>;
 };
 
 
-export type SubscriptionUniswapFactoriesArgs = {
+export type SubscriptionSushiswapFactoriesArgs = {
   skip?: Maybe<Scalars['Int']>;
   first?: Maybe<Scalars['Int']>;
-  orderBy?: Maybe<UniswapFactory_OrderBy>;
+  orderBy?: Maybe<SushiswapFactory_OrderBy>;
   orderDirection?: Maybe<OrderDirection>;
-  where?: Maybe<UniswapFactory_Filter>;
+  where?: Maybe<SushiswapFactory_Filter>;
   block?: Maybe<Block_Height>;
 };
 
@@ -1550,18 +1550,18 @@ export type SubscriptionBundlesArgs = {
 };
 
 
-export type SubscriptionUniswapDayDataArgs = {
+export type SubscriptionSushiswapDayDataArgs = {
   id: Scalars['ID'];
   block?: Maybe<Block_Height>;
 };
 
 
-export type SubscriptionUniswapDayDatasArgs = {
+export type SubscriptionSushiswapDayDatasArgs = {
   skip?: Maybe<Scalars['Int']>;
   first?: Maybe<Scalars['Int']>;
-  orderBy?: Maybe<UniswapDayData_OrderBy>;
+  orderBy?: Maybe<SushiswapDayData_OrderBy>;
   orderDirection?: Maybe<OrderDirection>;
-  where?: Maybe<UniswapDayData_Filter>;
+  where?: Maybe<SushiswapDayData_Filter>;
   block?: Maybe<Block_Height>;
 };
 
@@ -2139,8 +2139,8 @@ export enum Transaction_OrderBy {
   Swaps = 'swaps'
 }
 
-export type UniswapDayData = {
-  __typename?: 'UniswapDayData';
+export type SushiswapDayData = {
+  __typename?: 'SushiswapDayData';
   id: Scalars['ID'];
   date: Scalars['Int'];
   dailyVolumeETH: Scalars['BigDecimal'];
@@ -2156,7 +2156,7 @@ export type UniswapDayData = {
 };
 
 
-export type UniswapDayDataMostLiquidTokensArgs = {
+export type SushiswapDayDataMostLiquidTokensArgs = {
   skip?: Maybe<Scalars['Int']>;
   first?: Maybe<Scalars['Int']>;
   orderBy?: Maybe<TokenDayData_OrderBy>;
@@ -2164,7 +2164,7 @@ export type UniswapDayDataMostLiquidTokensArgs = {
   where?: Maybe<TokenDayData_Filter>;
 };
 
-export type UniswapDayData_Filter = {
+export type SushiswapDayData_Filter = {
   id?: Maybe<Scalars['ID']>;
   id_not?: Maybe<Scalars['ID']>;
   id_gt?: Maybe<Scalars['ID']>;
@@ -2259,7 +2259,7 @@ export type UniswapDayData_Filter = {
   txCount_not_in?: Maybe<Array<Scalars['BigInt']>>;
 };
 
-export enum UniswapDayData_OrderBy {
+export enum SushiswapDayData_OrderBy {
   Id = 'id',
   Date = 'date',
   DailyVolumeEth = 'dailyVolumeETH',
@@ -2274,8 +2274,8 @@ export enum UniswapDayData_OrderBy {
   TxCount = 'txCount'
 }
 
-export type UniswapFactory = {
-  __typename?: 'UniswapFactory';
+export type SushiswapFactory = {
+  __typename?: 'SushiswapFactory';
   id: Scalars['ID'];
   pairCount: Scalars['Int'];
   totalVolumeUSD: Scalars['BigDecimal'];
@@ -2288,7 +2288,7 @@ export type UniswapFactory = {
 };
 
 
-export type UniswapFactoryMostLiquidTokensArgs = {
+export type SushiswapFactoryMostLiquidTokensArgs = {
   skip?: Maybe<Scalars['Int']>;
   first?: Maybe<Scalars['Int']>;
   orderBy?: Maybe<TokenDayData_OrderBy>;
@@ -2296,7 +2296,7 @@ export type UniswapFactoryMostLiquidTokensArgs = {
   where?: Maybe<TokenDayData_Filter>;
 };
 
-export type UniswapFactory_Filter = {
+export type SushiswapFactory_Filter = {
   id?: Maybe<Scalars['ID']>;
   id_not?: Maybe<Scalars['ID']>;
   id_gt?: Maybe<Scalars['ID']>;
@@ -2367,7 +2367,7 @@ export type UniswapFactory_Filter = {
   mostLiquidTokens_not_contains?: Maybe<Array<Scalars['String']>>;
 };
 
-export enum UniswapFactory_OrderBy {
+export enum SushiswapFactory_OrderBy {
   Id = 'id',
   PairCount = 'pairCount',
   TotalVolumeUsd = 'totalVolumeUSD',

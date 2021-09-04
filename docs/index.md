@@ -116,21 +116,21 @@
 
 * [`sushi transactions`]
 
-## sushi uniswapDayData
+## sushi sushiswapDayData
 
-* [`sushi uniswapDayData`]
+* [`sushi sushiswapDayData`]
 
-## sushi uniswapDayDatas
+## sushi sushiswapDayDatas
 
-* [`sushi uniswapDayDatas`]
+* [`sushi sushiswapDayDatas`]
 
-## sushi uniswapFactories
+## sushi sushiswapFactories
 
-* [`sushi uniswapFactories`]
+* [`sushi sushiswapFactories`]
 
-## sushi uniswapFactory
+## sushi sushiswapFactory
 
-* [`sushi uniswapFactory`]
+* [`sushi sushiswapFactory`]
 
 ## sushi user
 

@@ -4,9 +4,9 @@ import { Command, flags } from '@oclif/command'
 import handler from '../../handler'
 import gql from 'graphql-tag';
 
-const UniswapFactoryDocument = `
-query uniswapFactory($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $orderDirection: OrderDirection, $where: PairDayData_filter, $skip1: Int, $first1: Int, $orderBy1: PairDayData_orderBy, $orderDirection1: OrderDirection, $where1: PairDayData_filter, $skip2: Int, $first2: Int, $orderBy2: PairDayData_orderBy, $orderDirection2: OrderDirection, $where2: PairDayData_filter, $skip3: Int, $first3: Int, $orderBy3: PairDayData_orderBy, $orderDirection3: OrderDirection, $where3: PairDayData_filter, $skip4: Int, $first4: Int, $orderBy4: TokenDayData_orderBy, $orderDirection4: OrderDirection, $where4: TokenDayData_filter, $id: ID!, $block: Block_height) {
-  uniswapFactory(id: $id, block: $block) {
+const SushiswapFactoryDocument = `
+query sushiswapFactory($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $orderDirection: OrderDirection, $where: PairDayData_filter, $skip1: Int, $first1: Int, $orderBy1: PairDayData_orderBy, $orderDirection1: OrderDirection, $where1: PairDayData_filter, $skip2: Int, $first2: Int, $orderBy2: PairDayData_orderBy, $orderDirection2: OrderDirection, $where2: PairDayData_filter, $skip3: Int, $first3: Int, $orderBy3: PairDayData_orderBy, $orderDirection3: OrderDirection, $where3: PairDayData_filter, $skip4: Int, $first4: Int, $orderBy4: TokenDayData_orderBy, $orderDirection4: OrderDirection, $where4: TokenDayData_filter, $id: ID!, $block: Block_height) {
+  sushiswapFactory(id: $id, block: $block) {
     id
     pairCount
     totalVolumeUSD
@@ -152,7 +152,7 @@ query uniswapFactory($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $or
   }
 }`
 
-export default class uniswapFactory extends Command {
+export default class sushiswapFactory extends Command {
   
   
   static flags = {
@@ -268,7 +268,7 @@ export default class uniswapFactory extends Command {
   };
 
   async run() {
-    const { flags } = this.parse(uniswapFactory);
-    await handler({ command: this, query: UniswapFactoryDocument, variables: flags });
+    const { flags } = this.parse(sushiswapFactory);
+    await handler({ command: this, query: SushiswapFactoryDocument, variables: flags });
   }
 }

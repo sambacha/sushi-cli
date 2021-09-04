@@ -3,8 +3,12 @@
 /.nyc_output
 /dist
 /lib
-/package-lock.json
 /tmp
 node_modules
 .DS_Store
 .npmrc
+.cache/
+cache/
+*.log
+*.tgz
+*.tar.gz

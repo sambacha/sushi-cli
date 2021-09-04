@@ -4,9 +4,9 @@ import { Command, flags } from '@oclif/command'
 import handler from '../../handler'
 import gql from 'graphql-tag';
 
-const UniswapDayDatasDocument = `
-query uniswapDayDatas($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $orderDirection: OrderDirection, $where: PairDayData_filter, $skip1: Int, $first1: Int, $orderBy1: PairDayData_orderBy, $orderDirection1: OrderDirection, $where1: PairDayData_filter, $skip2: Int, $first2: Int, $orderBy2: PairDayData_orderBy, $orderDirection2: OrderDirection, $where2: PairDayData_filter, $skip3: Int, $first3: Int, $orderBy3: PairDayData_orderBy, $orderDirection3: OrderDirection, $where3: PairDayData_filter, $skip4: Int, $first4: Int, $orderBy4: TokenDayData_orderBy, $orderDirection4: OrderDirection, $where4: TokenDayData_filter, $skip5: Int, $first5: Int, $orderBy5: UniswapDayData_orderBy, $orderDirection5: OrderDirection, $where5: UniswapDayData_filter, $block: Block_height) {
-  uniswapDayDatas(
+const SushiswapFactoriesDocument = `
+query sushiswapFactories($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $orderDirection: OrderDirection, $where: PairDayData_filter, $skip1: Int, $first1: Int, $orderBy1: PairDayData_orderBy, $orderDirection1: OrderDirection, $where1: PairDayData_filter, $skip2: Int, $first2: Int, $orderBy2: PairDayData_orderBy, $orderDirection2: OrderDirection, $where2: PairDayData_filter, $skip3: Int, $first3: Int, $orderBy3: PairDayData_orderBy, $orderDirection3: OrderDirection, $where3: PairDayData_filter, $skip4: Int, $first4: Int, $orderBy4: TokenDayData_orderBy, $orderDirection4: OrderDirection, $where4: TokenDayData_filter, $skip5: Int, $first5: Int, $orderBy5: SushiswapFactory_orderBy, $orderDirection5: OrderDirection, $where5: SushiswapFactory_filter, $block: Block_height) {
+  sushiswapFactories(
     skip: $skip5
     first: $first5
     orderBy: $orderBy5
@@ -15,15 +15,13 @@ query uniswapDayDatas($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $o
     block: $block
   ) {
     id
-    date
-    dailyVolumeETH
-    dailyVolumeUSD
-    dailyVolumeUntracked
-    totalVolumeETH
-    totalLiquidityETH
+    pairCount
     totalVolumeUSD
+    totalVolumeETH
+    untrackedVolumeUSD
     totalLiquidityUSD
-    maxStored
+    totalLiquidityETH
+    txCount
     mostLiquidTokens(
       skip: $skip4
       first: $first4
@@ -158,11 +156,10 @@ query uniswapDayDatas($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $o
         dailyTxns
       }
     }
-    txCount
   }
 }`
 
-export default class uniswapDayDatas extends Command {
+export default class sushiswapFactories extends Command {
   
   
   static flags = {
@@ -294,7 +291,7 @@ export default class uniswapDayDatas extends Command {
   };
 
   async run() {
-    const { flags } = this.parse(uniswapDayDatas);
-    await handler({ command: this, query: UniswapDayDatasDocument, variables: flags });
+    const { flags } = this.parse(sushiswapFactories);
+    await handler({ command: this, query: SushiswapFactoriesDocument, variables: flags });
   }
 }

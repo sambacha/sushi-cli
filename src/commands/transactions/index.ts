@@ -298,13 +298,19 @@ query transactions($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $orde
 
 export default class transactions extends Command {
   
-  
+  /**
+   *
+   *
+   * @static commands
+   * @memberof transactions
+   */
   static flags = {
     help: flags.help({ char: 'h' }),
     skip: flags.integer({
       multiple: false,
       required: false,
     }),
+    // @type int
     first: flags.integer({
       multiple: false,
       required: false,
@@ -321,10 +327,12 @@ export default class transactions extends Command {
       multiple: false,
       required: false,
     }),
+    /** @type integer */ 
     skip1: flags.integer({
       multiple: false,
       required: false,
     }),
+      /** @type integer */ 
     first1: flags.integer({
       multiple: false,
       required: false,
@@ -341,10 +349,12 @@ export default class transactions extends Command {
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     skip2: flags.integer({
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     first2: flags.integer({
       multiple: false,
       required: false,
@@ -361,10 +371,12 @@ export default class transactions extends Command {
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     skip3: flags.integer({
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     first3: flags.integer({
       multiple: false,
       required: false,
@@ -381,10 +393,12 @@ export default class transactions extends Command {
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     skip4: flags.integer({
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     first4: flags.integer({
       multiple: false,
       required: false,
@@ -401,10 +415,12 @@ export default class transactions extends Command {
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     skip5: flags.integer({
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     first5: flags.integer({
       multiple: false,
       required: false,
@@ -421,10 +437,12 @@ export default class transactions extends Command {
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     skip6: flags.integer({
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     first6: flags.integer({
       multiple: false,
       required: false,
@@ -441,10 +459,12 @@ export default class transactions extends Command {
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     skip7: flags.integer({
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     first7: flags.integer({
       multiple: false,
       required: false,
@@ -461,10 +481,12 @@ export default class transactions extends Command {
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     skip8: flags.integer({
       multiple: false,
       required: false,
     }),
+        /** @type integer */ 
     first8: flags.integer({
       multiple: false,
       required: false,

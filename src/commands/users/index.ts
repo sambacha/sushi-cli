@@ -1,5 +1,5 @@
 import * as Types from '../../types';
-
+// const {Command, flags} = require('@oclif/core')
 import { Command, flags } from '@oclif/command'
 import handler from '../../handler'
 import gql from 'graphql-tag';
@@ -153,8 +153,15 @@ query users($skip: Int, $first: Int, $orderBy: PairDayData_orderBy, $orderDirect
 }`
 
 export default class users extends Command {
+/** 
+ * @TODO upgrade migration to oclif/core 
   
-  
+ class users extends Command {
+  constructor(args, opts) {
+    super(args, opts)
+  }
+*/  
+
   static flags = {
     help: flags.help({ char: 'h' }),
     skip: flags.integer({
@@ -263,8 +270,11 @@ export default class users extends Command {
     })
   };
 
+
+
   async run() {
-    const { flags } = this.parse(users);
+    const { flags } = await this.parse(users);
     await handler({ command: this, query: UsersDocument, variables: flags });
   }
 }
+
