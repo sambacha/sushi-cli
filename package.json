@@ -2,27 +2,13 @@
   "name": "sushi-sh",
   "description": "Shell Client for Sushiswap protocol",
   "version": "1.1.0",
-  "license": "MIT",
-  "main": "lib/index.js",
+  "author": "SEE CONTRIBUTORS",
   "bin": {
     "sushi": "bin/run"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/manifoldfinance/sushi-sh.git"
+  "bugs": {
+    "url": "https://github.com/manifoldfinance/sushi-sh/issues"
   },
-  "scripts": {
-    "build": "npx tsc -b",
-    "postpack": "rm -f oclif.manifest.json",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest",
-    "test": "exit 0",
-    "docs": "npx typedoc src/index.ts",
-    "version": "npx oclif-dev readme && git add README.md",
-    "codegen": "npx graphql-codegen --config codegen.yml",
-    "release": "npx oclif-dev pack:macos && oclif-dev pack:win && npm publish --access public",
-    "lint": "npx eslint src --ext .ts --fix"
-  },
-  "types": "lib/index.d.ts",
   "dependencies": {
     "@graphql-codegen/typescript-oclif": "^2.1.3",
     "@graphql-codegen/typescript-operations": "^2.1.2",
@@ -64,6 +50,11 @@
     "typedoc-neo-theme": "^1.1.1",
     "typescript": "^4.2.4"
   },
+  "directories": {
+    "lib": "lib",
+    "bin": "bin",
+    "docs": "docs"
+  },
   "engines": {
     "node": ">=12.0.0"
   },
@@ -73,23 +64,18 @@
     "/oclif.manifest.json"
   ],
   "homepage": "https://github.com/manifoldfinance/sushi-sh",
-  "bugs": {
-    "url": "https://github.com/manifoldfinance/sushi-sh/issues"
-  },
   "keywords": [
-    "oclif",
-    "ethereum",
-    "sushiswap",
-    "sushi",
-    "terminal",
     "blockchian",
     "client",
-    "defi"
+    "defi",
+    "ethereum",
+    "oclif",
+    "sushi",
+    "sushiswap",
+    "terminal"
   ],
-  "author": "SEE CONTRIBUTORS",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
+  "license": "MIT",
+  "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
     "bin": "sushi",
@@ -106,9 +92,23 @@
       "@oclif/plugin-warn-if-update-available"
     ]
   },
-  "directories": {
-    "lib": "lib",
-    "bin": "bin",
-    "docs": "docs"
-  }
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manifoldfinance/sushi-sh.git"
+  },
+  "scripts": {
+    "build": "npx tsc -b",
+    "codegen": "npx graphql-codegen --config codegen.yml",
+    "docs": "npx typedoc src/index.ts",
+    "lint": "npx eslint src --ext .ts --fix",
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest",
+    "release": "npx oclif-dev pack:macos && oclif-dev pack:win && npm publish --access public",
+    "test": "exit 0",
+    "version": "npx oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
 }
